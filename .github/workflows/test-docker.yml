@@ -21,7 +21,7 @@ jobs:
             
             - name: Build the Docker image
               run: |
-                docker build -f ./Dockerfile -t test --secret id=test_secret,src=./secretFile --progress=plain --no-cache .
+                docker buildx build -f ./Dockerfile -t test --secret id=test_secret,src=./secretFile --progress=plain --no-cache .
             
             - name: Run the Docker image
               run: |
